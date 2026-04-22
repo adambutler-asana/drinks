@@ -1,0 +1,1041 @@
+/* --- Custom Fonts --- */
+@font-face {
+  font-family: 'DIN';
+  src: url('/fonts/DINCondensed-Regular.woff') format('woff');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Tungsten Medium';
+  src: url('/fonts/Tungsten-Medium.woff') format('woff');
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Marmalede';
+  src: url('/fonts/Marmalede.woff') format('woff');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Mrs Sheppards';
+  src: url('/fonts/Mrs-Sheppards.woff') format('woff');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Hellenic Wide';
+  src: url('/fonts/Hellenic-Wide.woff') format('woff');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Neutra Demi';
+  src: url('/fonts/neutra-demi-webfont.woff') format('woff');
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'SignPainter Housebrush';
+  src: url('/fonts/SignPainter-Housebrush.woff') format('woff');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'SF Mono';
+  src: url('/fonts/SF-Mono-Regular.woff') format('woff');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Optima ExtraBlack';
+  src: url('/fonts/Optima-ExtraBlack.woff') format('woff');
+  font-weight: 700;
+}
+
+/* --- Reset & Base --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'SF Mono', 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #474238;
+  background: #1a1a1a;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100dvh;
+  overscroll-behavior: none;
+}
+
+#root {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Typography --- */
+h1, h2, h3, h4 {
+  font-family: 'DIN', Helvetica, sans-serif;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+/* --- Category Themes --- */
+.category-whiskey { background-color: #DFC39D; --section-bg: #DFC39D; color: #474238; }
+.category-whiskey .category-title {
+  font-family: 'Tungsten Medium', sans-serif;
+  font-weight: 500;
+  font-size: 3rem;
+  color: #CA4321;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.category-gin { background-color: #AED1BC; --section-bg: #AED1BC; color: #153B26; }
+.category-gin .category-title {
+  font-family: 'Marmalede', serif;
+  font-weight: 600;
+  font-size: 3rem;
+  color: #F05959;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+
+.category-rum { background-color: #64754A; --section-bg: #64754A; color: #FFE7C6; }
+.category-rum .category-title {
+  font-family: 'Mrs Sheppards', cursive;
+  font-weight: 400;
+  font-size: 3.125rem;
+  color: #F47F7F;
+}
+
+.category-tequila { background-color: #1C1C1C; --section-bg: #1C1C1C; color: #808C73; }
+.category-tequila .category-title {
+  font-family: 'Hellenic Wide', sans-serif;
+  font-weight: 400;
+  font-size: 1.625rem;
+  color: #CFA16C;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.category-spritz { background-color: #FDF4E2; --section-bg: #FDF4E2; color: #2D2A22; }
+.category-spritz .category-title {
+  font-family: 'Neutra Demi', sans-serif;
+  font-weight: 600;
+  font-size: 2.25rem;
+  color: #FD6615;
+  text-transform: uppercase;
+}
+
+.category-mocktails { background-color: #FFD7CC; --section-bg: #FFD7CC; color: #286645; }
+.category-mocktails .category-title {
+  font-family: 'SignPainter Housebrush', cursive;
+  font-weight: 400;
+  font-size: 2.875rem;
+  color: #FF8A47;
+  text-transform: uppercase;
+}
+
+/* --- Drink Cards --- */
+.drink-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.drink-card:last-child { border-bottom: none; }
+
+.drink-info { flex: 1; min-width: 0; }
+
+.drink-name {
+  font-family: 'Optima ExtraBlack', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.drink-desc {
+  font-family: 'SF Mono', monospace;
+  font-size: 0.8125rem;
+  opacity: 0.8;
+  letter-spacing: 0.375px;
+}
+
+.drink-emoji {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  width: 28px;
+  text-align: center;
+}
+
+/* --- Add/Quantity Button --- */
+.drink-action {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  position: relative;
+}
+
+.btn-add {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1.5px solid currentColor;
+  background: transparent;
+  color: inherit;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  opacity: 0.5;
+  transition: opacity 0.15s;
+}
+.btn-add:active { opacity: 1; }
+
+/* Expanding pill quantity control */
+.qty-pill {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 28px;
+  border: 1.5px solid currentColor;
+  background: var(--section-bg, #fff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 10;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: width 0.25s ease-out, border-radius 0.25s ease-out;
+}
+
+.qty-pill--collapsed {
+  width: 28px;
+  border-radius: 50%;
+}
+
+.qty-pill--expanded {
+  width: 90px;
+  border-radius: 14px;
+  cursor: default;
+}
+
+/* Collapsed label (e.g. "1x") */
+.qty-pill-label {
+  position: absolute;
+  font-family: 'SF Mono', monospace;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  opacity: 1;
+  transition: opacity 0.15s ease-out;
+  pointer-events: none;
+}
+.qty-pill--expanded .qty-pill-label {
+  opacity: 0;
+}
+
+/* Expanded inner controls */
+.qty-pill-inner {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease-out 0.1s;
+  white-space: nowrap;
+}
+.qty-pill--expanded .qty-pill-inner {
+  opacity: 1;
+  pointer-events: auto;
+}
+.qty-pill--collapsed .qty-pill-inner {
+  transition-delay: 0s;
+}
+
+.qty-pill-btn {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  color: inherit;
+  font-size: 0.9375rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.qty-pill-btn:active {
+  opacity: 0.6;
+}
+
+.qty-pill-num {
+  font-family: 'SF Mono', monospace;
+  font-size: 0.75rem;
+  min-width: 16px;
+  text-align: center;
+  font-weight: 700;
+}
+
+/* --- Bottom Bar (Order Summary) --- */
+.order-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #1a1a1a;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  padding-bottom: calc(14px + env(safe-area-inset-bottom));
+  z-index: 100;
+  box-shadow: 0 -2px 12px rgba(0,0,0,0.3);
+}
+.order-bar-count {
+  font-family: 'SF Mono', monospace;
+  font-size: 0.875rem;
+}
+.order-bar-btn {
+  background: #CA4321;
+  color: #fff;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-family: 'DIN', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* --- Bottom Nav --- */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #1a1a1a;
+  display: flex;
+  z-index: 90;
+  padding-bottom: env(safe-area-inset-bottom);
+  border-top: 1px solid #333;
+}
+.bottom-nav a {
+  flex: 1;
+  text-align: center;
+  padding: 10px 0;
+  color: #666;
+  text-decoration: none;
+  font-family: 'SF Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: color 0.15s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.bottom-nav a.active { color: #fff; }
+.bottom-nav-icon {
+  display: block;
+  font-size: 1.25rem;
+  margin-bottom: 1px;
+  line-height: 1;
+}
+
+/* --- Page Layout --- */
+.page {
+  flex: 1;
+  padding-bottom: calc(60px + env(safe-area-inset-bottom));
+}
+.page-with-bar {
+  padding-bottom: calc(120px + env(safe-area-inset-bottom));
+}
+
+.category-section {
+  padding: 48px 24px 40px;
+  text-align: center;
+}
+.category-section .category-title {
+  margin-bottom: 2rem;
+}
+
+/* --- Admin Styles --- */
+.admin-page {
+  background: #111;
+  color: #e0e0e0;
+  min-height: 100dvh;
+  padding: 20px 16px;
+  padding-bottom: calc(80px + env(safe-area-inset-bottom));
+}
+.btn-back {
+  background: none;
+  border: 1px solid #555;
+  color: #fff;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.admin-page h1 {
+  font-family: 'DIN', sans-serif;
+  font-size: 1.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.admin-card {
+  background: #1e1e1e;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+.admin-card-name {
+  font-family: 'Optima ExtraBlack', sans-serif;
+  font-size: 1rem;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.admin-card-meta {
+  font-size: 0.75rem;
+  color: #888;
+  font-family: 'SF Mono', monospace;
+}
+
+/* --- Buttons --- */
+.btn {
+  border: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-family: 'DIN', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+}
+.btn-primary { background: #CA4321; color: #fff; }
+.btn-secondary { background: #333; color: #fff; }
+.btn-success { background: #2d7a4f; color: #fff; }
+.btn-danger { background: #a33; color: #fff; }
+.btn-ghost {
+  background: transparent;
+  color: #aaa;
+  border: 1px solid #444;
+}
+.btn:disabled { opacity: 0.4; cursor: default; }
+.btn-block { width: 100%; }
+.btn-lg { min-height: 56px; font-size: 1.125rem; }
+
+/* --- Forms --- */
+.form-group {
+  margin-bottom: 16px;
+}
+.form-label {
+  display: block;
+  font-family: 'SF Mono', monospace;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #888;
+  margin-bottom: 6px;
+}
+.form-input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #333;
+  background: #1e1e1e;
+  color: #fff;
+  font-family: 'SF Mono', monospace;
+  font-size: 1rem;
+  outline: none;
+  -webkit-appearance: none;
+}
+.form-input:focus {
+  border-color: #CA4321;
+}
+.form-input::placeholder {
+  color: #555;
+}
+
+select.form-input {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* --- PIN screen --- */
+.pin-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100dvh;
+  background: #111;
+  color: #fff;
+  padding: 24px;
+}
+.pin-screen h1 {
+  font-family: 'DIN', sans-serif;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 32px;
+}
+.pin-input {
+  width: 200px;
+  text-align: center;
+  font-size: 2rem;
+  letter-spacing: 12px;
+  padding: 16px;
+  border-radius: 12px;
+  border: 2px solid #333;
+  background: #1e1e1e;
+  color: #fff;
+  outline: none;
+  font-family: 'SF Mono', monospace;
+  margin-bottom: 24px;
+}
+.pin-input:focus { border-color: #CA4321; }
+.pin-error {
+  color: #ff4444;
+  font-size: 0.875rem;
+  margin-bottom: 16px;
+}
+
+/* --- Order Queue --- */
+.queue-card {
+  background: #1e1e1e;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+.queue-position {
+  font-family: 'DIN', sans-serif;
+  font-size: 1.5rem;
+  color: #CA4321;
+  margin-right: 12px;
+}
+.queue-guest {
+  font-family: 'Optima ExtraBlack', sans-serif;
+  font-size: 1.125rem;
+  color: #fff;
+}
+.queue-drinks {
+  font-family: 'SF Mono', monospace;
+  font-size: 0.8125rem;
+  color: #aaa;
+  margin-top: 6px;
+}
+
+.queue-section-header {
+  font-family: 'DIN', sans-serif;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #666;
+  margin: 0 0 14px;
+}
+
+/* --- Social feed --- */
+.feed-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: #1a1a1a;
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-bottom: 8px;
+}
+.feed-emoji {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  line-height: 1.4;
+}
+.feed-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+.feed-name {
+  font-family: 'Optima ExtraBlack', sans-serif;
+  color: #fff;
+}
+.feed-text {
+  font-family: 'SF Mono', monospace;
+  font-size: 0.8125rem;
+  color: #ccc;
+  line-height: 1.4;
+}
+.feed-time {
+  font-family: 'SF Mono', monospace;
+  font-size: 0.6875rem;
+  color: #555;
+}
+.animate-in-stagger {
+  animation: fadeIn 0.3s ease-out both;
+}
+
+/* --- Complete button --- */
+.btn-complete {
+  background: #2d7a4f;
+  color: #fff;
+  border: none;
+  padding: 14px 20px;
+  border-radius: 10px;
+  font-family: 'DIN', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  min-height: 52px;
+  width: 100%;
+  margin-top: 12px;
+}
+
+/* --- FAB --- */
+/* --- Recipes admin --- */
+.recipes-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.recipes-header h1 {
+  margin-bottom: 0;
+}
+.recipes-category-label {
+  font-family: 'SF Mono', monospace;
+  font-size: 0.75rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+.btn-text {
+  background: none;
+  border: none;
+  color: #888;
+  font-family: 'DIN', sans-serif;
+  font-size: 0.9375rem;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  padding: 6px 12px;
+  -webkit-tap-highlight-color: transparent;
+}
+.btn-text--primary {
+  color: #CA4321;
+  font-weight: 700;
+}
+
+/* Drag reorder */
+.recipe-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.drag-handle {
+  color: #555;
+  padding: 8px 4px;
+  cursor: grab;
+  touch-action: none;
+  -webkit-tap-highlight-color: transparent;
+  flex-shrink: 0;
+}
+.drag-handle:active {
+  cursor: grabbing;
+}
+.drag-item {
+  transition: transform 0.2s ease-out;
+}
+.drag-item--dragging {
+  opacity: 0.8;
+  z-index: 100;
+  position: relative;
+}
+.drag-item--shift-up {
+  transform: translateY(-100%);
+}
+.drag-item--shift-down {
+  transform: translateY(100%);
+}
+
+.fab {
+  position: fixed;
+  bottom: calc(80px + env(safe-area-inset-bottom));
+  right: 20px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #CA4321;
+  color: #fff;
+  border: none;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  cursor: pointer;
+  z-index: 80;
+}
+
+/* --- Event Cards --- */
+.event-card {
+  display: block;
+  background: #1e1e1e;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 12px;
+  text-decoration: none;
+  color: #fff;
+  -webkit-tap-highlight-color: transparent;
+}
+.event-card h2 {
+  font-family: 'DIN', sans-serif;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.event-card-date {
+  font-family: 'SF Mono', monospace;
+  font-size: 0.8125rem;
+  color: #888;
+  margin-top: 4px;
+}
+
+/* --- Recipe Modal --- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: 200;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.modal-content {
+  background: #1a1a1a;
+  color: #e0e0e0;
+  border-radius: 20px 20px 0 0;
+  padding: 24px 20px;
+  padding-bottom: calc(24px + env(safe-area-inset-bottom));
+  width: 100%;
+  max-height: 85dvh;
+  overflow-y: auto;
+  animation: slideUp 0.25s ease-out;
+}
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+.modal-handle {
+  width: 40px;
+  height: 4px;
+  background: #444;
+  border-radius: 2px;
+  margin: 0 auto 20px;
+}
+.modal-title {
+  font-family: 'Optima ExtraBlack', sans-serif;
+  font-size: 1.25rem;
+  color: #fff;
+  margin-bottom: 4px;
+}
+.modal-category {
+  font-family: 'SF Mono', monospace;
+  font-size: 0.75rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+.modal-section-title {
+  font-family: 'DIN', sans-serif;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #888;
+  margin-bottom: 8px;
+  margin-top: 20px;
+}
+.modal-ingredient {
+  font-family: 'SF Mono', monospace;
+  font-size: 0.875rem;
+  padding: 4px 0;
+}
+.modal-ingredient-amount {
+  color: #CA4321;
+  margin-right: 8px;
+}
+.modal-step {
+  font-family: 'SF Mono', monospace;
+  font-size: 0.875rem;
+  padding: 6px 0;
+  display: flex;
+  gap: 10px;
+}
+.modal-step-num {
+  color: #CA4321;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* --- Empty state --- */
+.empty-state {
+  text-align: center;
+  padding: 48px 24px;
+  color: #666;
+  font-family: 'SF Mono', monospace;
+  font-size: 0.875rem;
+}
+
+/* --- Toggle --- */
+.toggle {
+  position: relative;
+  width: 52px;
+  height: 30px;
+  border-radius: 15px;
+  background: #333;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  border: none;
+  transition: background 0.2s;
+}
+.toggle.active { background: #2d7a4f; }
+.toggle::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #fff;
+  transition: transform 0.2s;
+}
+.toggle.active::after { transform: translateX(22px); }
+
+/* --- Checklist --- */
+.checklist-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid #222;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.checklist-check {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  border: 2px solid #444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: transparent;
+  font-size: 0.875rem;
+}
+.checklist-check.checked {
+  background: #2d7a4f;
+  border-color: #2d7a4f;
+  color: #fff;
+}
+
+/* --- Timestamp --- */
+.time-ago {
+  font-family: 'SF Mono', monospace;
+  font-size: 0.6875rem;
+  color: #666;
+}
+
+/* --- Order card drink table --- */
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+.order-items {
+  border-top: 1px solid #333;
+  margin-bottom: 12px;
+}
+.order-item-row {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #2a2a2a;
+}
+.order-item-qty {
+  font-family: 'SF Mono', monospace;
+  font-size: 0.8125rem;
+  color: #CA4321;
+  font-weight: 700;
+  width: 28px;
+  flex-shrink: 0;
+}
+.order-item-name {
+  flex: 1;
+  font-family: 'Optima ExtraBlack', sans-serif;
+  font-size: 0.875rem;
+  color: #e0e0e0;
+}
+.order-item-view {
+  background: none;
+  border: 1px solid #444;
+  color: #888;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  -webkit-tap-highlight-color: transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.order-item-view:active {
+  color: #fff;
+  border-color: #888;
+}
+
+/* --- Order confirmation qty controls --- */
+.order-qty-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.order-qty-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1.5px solid #555;
+  background: transparent;
+  color: #fff;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.order-qty-btn:active {
+  border-color: #999;
+}
+.order-qty-num {
+  font-family: 'SF Mono', monospace;
+  font-size: 0.875rem;
+  min-width: 20px;
+  text-align: center;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* --- Order confirmation --- */
+.confirmation-msg {
+  text-align: center;
+  padding: 48px 24px;
+}
+.confirmation-msg h2 {
+  font-family: 'DIN', sans-serif;
+  font-size: 2rem;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+.confirmation-msg p {
+  color: #888;
+  font-family: 'SF Mono', monospace;
+}
+
+/* --- Badge --- */
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-family: 'SF Mono', monospace;
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.badge-active { background: #2d7a4f; color: #fff; }
+.badge-inactive { background: #333; color: #888; }
+
+/* --- Archive stats --- */
+.archive-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.stat-card {
+  background: #1e1e1e;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+}
+.stat-value {
+  font-family: 'DIN', sans-serif;
+  font-size: 2rem;
+  color: #CA4321;
+}
+.stat-label {
+  font-family: 'SF Mono', monospace;
+  font-size: 0.6875rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 4px;
+}
+
+/* --- Animations --- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-in {
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* --- Loading --- */
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  color: #666;
+  font-family: 'SF Mono', monospace;
+  font-size: 0.875rem;
+}
