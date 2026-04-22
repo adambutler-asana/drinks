@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Cocktail ordering app for hosting cocktail parties. Guests browse a menu, add drinks, and submit orders. The host (admin) sees incoming orders in real-time and marks them complete. Built as a mobile-first single-page app deployed to a `/drinks/` subdirectory.
 
-The app source lives in `app/`.
+The app source lives in `app/`. GitHub repo: https://github.com/adambutler-asana/drinks
 
 ## Commands
 
